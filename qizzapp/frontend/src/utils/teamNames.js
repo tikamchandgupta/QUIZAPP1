@@ -2,8 +2,8 @@
 const teamIdMap = {
   1: 'Moonshine coders',
   2: 'Crosscity coders',
-  3: 'Algoloom',
-  4: 'Synergy squad',
+  3: 'Synergy squad',
+  4: 'Algoloom',
 };
 
 // Map various backend / DB names to display names
@@ -11,14 +11,14 @@ const teamNameMap = {
   // Generic labels
   'Team 1': 'Moonshine coders',
   'Team 2': 'Crosscity coders',
-  'Team 3': 'Algoloom',
-  'Team 4': 'Synergy squad',
+  'Team 3': 'Synergy squad',
+  'Team 4': 'Algoloom',
 
   // IPL seed names from backend
   'Mumbai Indians': 'Moonshine coders',
   'Delhi Capitals': 'Crosscity coders',
-  'Royal Challengers': 'Algoloom',
-  'Kolkata Knight Riders': 'Synergy squad',
+  'Royal Challengers': 'Synergy squad',
+  'Kolkata Knight Riders': 'Algoloom',
 };
 
 /**

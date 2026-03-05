@@ -98,7 +98,11 @@ export class AuctionService {
           db.run('UPDATE players SET sold_to_team_id = NULL, status = "AVAILABLE", sold_price = NULL');
 
           // Reset teams
-          db.run('UPDATE teams SET remaining_purse = 10000000, players_count = 0, score = 0');
+          db.run('SELECT initial_purse FROM teams', function(err, row) {
+            if (err) reject(err);
+          });
+
+          db.run('UPDATE teams SET remaining_purse = initial_purse, players_count = 0, score = 0');
 
           // Clear history
           db.run('DELETE FROM auction_history', function(err) {

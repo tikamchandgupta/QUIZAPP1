@@ -43,6 +43,50 @@ export const QuizPage = () => {
         <div className="quiz-layout">
           <div className="quiz-main">
             <QuestionDisplay />
+
+            {/* Questions by Team */}
+            <div className="questions-by-team-section">
+              <div className="section-header">
+                <h3>All Team Questions</h3>
+                {hiddenQuestions.size > 0 && (
+                  <Button onClick={handleShowAllQuestions} variant="secondary" className="btn-sm">
+                    Show All Hidden ({hiddenQuestions.size})
+                  </Button>
+                )}
+              </div>
+              {Object.entries(questionsByTeam).map(([teamName, questions]) => (
+                <div key={teamName} className="team-questions-display">
+                  <h4>{getDisplayTeamName(teamName)} ({questions.length} questions)</h4>
+                  <div className="questions-grid">
+                    {questions.map((question) => (
+                      <div key={question.id} className="question-card">
+                        <div className="question-card-header">
+                          <div className="question-info">
+                            <strong>{question.cricketer}</strong>
+                            <Button
+                              onClick={() => handleHideQuestion(question.id)}
+                              variant="danger"
+                              className="btn-xs hide-btn"
+                              title="Hide this question"
+                            >
+                              ✕
+                            </Button>
+                          </div>
+                        </div>
+                        <div className="question-card-body">
+                          <p>{question.question}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
+              {Object.keys(questionsByTeam).length === 0 && (
+                <div className="no-questions">
+                  <p>All questions are hidden. <button onClick={handleShowAllQuestions} className="link-btn">Show all</button></p>
+                </div>
+              )}
+            </div>
           </div>
 
           <div className="quiz-sidebar">

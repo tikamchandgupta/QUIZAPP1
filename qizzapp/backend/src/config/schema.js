@@ -75,7 +75,7 @@ export const seedInitialData = () => {
           return;
         }
 
-        const initialPurse = parseInt(process.env.INITIAL_PURSE) || 10000000;
+        const initialPurse = parseInt(process.env.INITIAL_PURSE) || 10000;
 
         // Insert teams
         const teams = ['Mumbai Indians', 'Delhi Capitals', 'Royal Challengers', 'Kolkata Knight Riders'];
