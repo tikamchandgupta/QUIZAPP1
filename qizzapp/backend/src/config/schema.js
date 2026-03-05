@@ -78,7 +78,7 @@ export const seedInitialData = () => {
         const initialPurse = 10000000;
 
         // Insert teams
-        const teams = ['Mumbai Indians', 'Delhi Capitals', 'Royal Challengers', 'Kolkata Knight Riders'];
+        const teams = ['Moonshine coders', 'Crosscity coders', 'Algoloom', 'Synergy squad'];
         teams.forEach((team) => {
           db.run(
             'INSERT INTO teams (name, initial_purse, remaining_purse) VALUES (?, ?, ?)',

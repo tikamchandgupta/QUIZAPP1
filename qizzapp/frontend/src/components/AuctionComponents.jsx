@@ -119,7 +119,7 @@ export const BidForm = ({ selectedPlayer, onAssign, loading }) => {
               <option value="">-- Select Team --</option>
               {teams.map((team) => (
                 <option key={team.id} value={team.id} disabled={team.players_count >= 5}>
-                  {team.name} ({team.players_count}/5) - ₹{team.remaining_purse.toLocaleString()}
+                  {getDisplayTeamName(team.name)} ({team.players_count}/5) - ₹{team.remaining_purse.toLocaleString()}
                 </option>
               ))}
             </select>
