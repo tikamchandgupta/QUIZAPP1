@@ -88,23 +88,38 @@ export const seedInitialData = () => {
 
         // Insert players (cricketers and questions)
         const players = [
-          { name: 'Virat Kohli', question: 'What is the capital of France?', answer: 'Paris', optionA: 'London', optionB: 'Paris', optionC: 'Berlin', optionD: 'Madrid', price: 1600 },
-          { name: 'Rohit Sharma', question: 'What is 2 + 2?', answer: '4', optionA: '3', optionB: '4', optionC: '5', optionD: '6', price: 1500 },
-          { name: 'KL Rahul', question: 'Who wrote Romeo and Juliet?', answer: 'William Shakespeare', optionA: 'Jane Austen', optionB: 'William Shakespeare', optionC: 'Mark Twain', optionD: 'Charles Dickens', price: 1400 },
-          { name: 'Rishabh Pant', question: 'What is the largest planet?', answer: 'Jupiter', optionA: 'Saturn', optionB: 'Mars', optionC: 'Jupiter', optionD: 'Neptune', price: 1300 },
-          { name: 'Jasprit Bumrah', question: 'What is the chemical symbol for gold?', answer: 'Au', optionA: 'Go', optionB: 'Gd', optionC: 'Au', optionD: 'Ag', price: 1200 },
-          { name: 'Ravichandran Ashwin', question: 'In what year did World War 2 end?', answer: '1945', optionA: '1943', optionB: '1944', optionC: '1945', optionD: '1946', price: 1100 },
-          { name: 'Hardik Pandya', question: 'What is the smallest country in the world?', answer: 'Vatican City', optionA: 'Monaco', optionB: 'Vatican City', optionC: 'Liechtenstein', optionD: 'San Marino', price: 1000 },
-          { name: 'Yuzvendra Chahal', question: 'What is the speed of light?', answer: '299,792,458 m/s', optionA: '150,000,000 m/s', optionB: '299,792,458 m/s', optionC: '300,000,000 m/s', optionD: '250,000,000 m/s', price: 900 },
-          { name: 'Suryakumar Yadav', question: 'Who is the author of Harry Potter?', answer: 'J.K. Rowling', optionA: 'J.R.R. Tolkien', optionB: 'J.K. Rowling', optionC: 'Stephenie Meyer', optionD: 'Suzanne Collins', price: 800 },
-          { name: 'Siraj Mohammad', question: 'What is the boiling point of water?', answer: '100°C', optionA: '50°C', optionB: '100°C', optionC: '150°C', optionD: '200°C', price: 700 },
-          { name: 'Arjun Tendulkar', question: 'What is the longest river in the world?', answer: 'The Nile', optionA: 'The Amazon', optionB: 'The Yangtze', optionC: 'The Nile', optionD: 'The Mississippi', price: 600 },
-          { name: 'Deepak Chahar', question: 'How many continents are there?', answer: '7', optionA: '5', optionB: '6', optionC: '7', optionD: '8', price: 500 },
-          { name: 'Harshal Patel', question: 'What is the currency of Japan?', answer: 'Yen', optionA: 'Pound', optionB: 'Euro', optionC: 'Yen', optionD: 'Dollar', price: 400 },
-          { name: 'Avesh Khan', question: 'Who painted the Mona Lisa?', answer: 'Leonardo da Vinci', optionA: 'Michelangelo', optionB: 'Leonardo da Vinci', optionC: 'Raphael', optionD: 'Donatello', price: 300 },
-          { name: 'Umran Malik', question: 'What is the largest ocean?', answer: 'Pacific Ocean', optionA: 'Atlantic Ocean', optionB: 'Indian Ocean', optionC: 'Pacific Ocean', optionD: 'Arctic Ocean', price: 250 },
-          { name: 'Riyan Parag', question: 'How many strings does a standard guitar have?', answer: '6', optionA: '4', optionB: '5', optionC: '6', optionD: '8', price: 200 }
-        ];
+{ name: "Rohit Sharma", question: "Why can ElementNotInteractableException occur?", answer: "Element is overlapped by another element", optionA: "Element is hidden", optionB: "Element is disabled", optionC: "Element is outside viewport", optionD: "Element is overlapped by another element", price: 2000000 },
+
+{ name: "Virat Kohli", question: "Which is the MOST correct statement about getText()?", answer: "Returns rendered text as seen by user", optionA: "Returns visible text", optionB: "Ignores hidden elements", optionC: "Returns rendered text as seen by user", optionD: "Extracts text based on browser layout engine", price: 2000000 },
+
+{ name: "Tilak Verma", question: "Why can visibilityOfElementLocated still fail even when element is visible in browser?", answer: "All of the above", optionA: "CSS opacity 0", optionB: "Element outside viewport", optionC: "Element inside shadow DOM", optionD: "All of the above", price: 1500000 },
+
+{ name: "MS Dhoni", question: "What is returned when getText() is called on a hidden element?", answer: "Empty String", optionA: "Null", optionB: "Exception", optionC: "Empty String", optionD: "Hidden text", price: 2000000 },
+
+{ name: "Sanju Samson", question: "Why does this code sometimes throw ElementClickInterceptedException? driver.findElement(By.id(\"login\")).click();", answer: "Another element overlaps it", optionA: "Element not visible", optionB: "Another element overlaps it", optionC: "Element inside iframe", optionD: "DOM refreshed", price: 1500000 },
+
+{ name: "Harshal Patel", question: "What happens if findElement() does not find any matching element?", answer: "Throws NoSuchElementException", optionA: "Returns null", optionB: "Returns empty list", optionC: "Throws NoSuchElementException", optionD: "Waits indefinitely", price: 1000000 },
+
+{ name: "Riyan Parag", question: "What does findElements() return if no elements are found?", answer: "Empty List", optionA: "null", optionB: "Empty List", optionC: "Throws NoSuchElementException", optionD: "Throws TimeoutException", price: 1000000 },
+
+{ name: "Unknown", question: "What is the difference between presenceOfElementLocated and visibilityOfElementLocated?", answer: "Presence checks DOM only; Visibility checks display status", optionA: "No difference", optionB: "Presence checks DOM only; Visibility checks display status", optionC: "Visibility ignores DOM", optionD: "Presence checks CSS", price: 1000000 },
+
+{ name: "Hardik Pandya", question: "What is returned when getText() is called on a hidden element?", answer: "Empty String", optionA: "Null", optionB: "Exception", optionC: "Empty String", optionD: "Hidden text", price: 1500000 },
+
+{ name: "Sunil Narine", question: "What happens here? driver.switchTo().frame(0); driver.switchTo().defaultContent(); driver.switchTo().frame(0);", answer: "Frame switches successfully", optionA: "Frame switches successfully", optionB: "Exception", optionC: "Nested frame issue", optionD: "Frame already selected", price: 1500000 },
+
+{ name: "Jasprit Bumrah", question: "What will this code do? WebElement element = driver.findElement(By.id(\"login\")); driver.navigate().refresh(); element.click();", answer: "Throws StaleElementReferenceException", optionA: "Works normally", optionB: "Throws NoSuchElementException", optionC: "Throws StaleElementReferenceException", optionD: "Click ignored", price: 2000000 },
+
+{ name: "Unknown", question: "Which of the following ensures logging only when validation fails?", answer: "log().ifValidationFails()", optionA: "log().all()", optionB: "log().ifError()", optionC: "log().ifValidationFails()", optionD: "log().ifFails()", price: 1500000 },
+
+{ name: "Unknown", question: "What does this code return? Response res = given().when().get(\"/users\"); System.out.println(res.path(\"data.id\"));", answer: "[1,2]", optionA: "1", optionB: "[1,2]", optionC: "null", optionD: "Exception", price: 1000000 },
+
+{ name: "Unknown", question: "What request is sent? given().pathParam(\"id\",5).queryParam(\"id\",10).when().get(\"/users/{id}\")", answer: "/users/5?id=10", optionA: "/users/5?id=10", optionB: "/users/10?id=5", optionC: "/users/5?id=5", optionD: "/users/10?id=10", price: 1000000 },
+
+{ name: "Unknown", question: "If content-type is not set while sending body Map.of(\"id\",10) in POST request, what happens?", answer: "Automatically converted to JSON", optionA: "Request fails", optionB: "Automatically converted to JSON", optionC: "Sent as plain text", optionD: "Sent as form data", price: 1500000 },
+
+{ name: "Unknown", question: "Extract vs Assert Trick: In REST Assured extraction with validation, what happens first?", answer: "Validation happens before extraction", optionA: "Assertion happens after extraction", optionB: "Extraction happens before validation", optionC: "Validation happens before extraction", optionD: "Both run simultaneously", price: 1500000 }
+];
 
         players.forEach((player) => {
           db.run(
