@@ -17,7 +17,7 @@ export const QuizProvider = ({ children }) => {
 
   const fetchLeaderboard = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/quiz/leaderboard');
+      const response = await axios.get('https://quizapp-imt6.onrender.com/api/quiz/leaderboard');
       if (response.data && Array.isArray(response.data.data)) {
         setLeaderboard(response.data.data);
       } else {
@@ -33,7 +33,7 @@ export const QuizProvider = ({ children }) => {
 
   const fetchAllQuestions = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/quiz/questions');
+      const response = await axios.get('https://quizapp-imt6.onrender.com/api/quiz/questions');
       setAllQuestions(response.data.data);
     } catch (err) {
       setError(err.message);
@@ -43,7 +43,7 @@ export const QuizProvider = ({ children }) => {
 
   const fetchUndisplayedQuestions = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/quiz/questions/undisplayed');
+      const response = await axios.get('https://quizapp-imt6.onrender.com/api/quiz/questions/undisplayed');
       setUndisplayedQuestions(response.data.data);
     } catch (err) {
       setError(err.message);
@@ -53,7 +53,7 @@ export const QuizProvider = ({ children }) => {
 
   const fetchCurrentQuestion = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/quiz/current-question');
+      const response = await axios.get('https://quizapp-imt6.onrender.com/api/quiz/current-question');
       const { question, showAnswer: shouldShowAnswer } = response.data.data;
       setCurrentQuestion(question);
       setShowAnswer(shouldShowAnswer);
@@ -67,7 +67,7 @@ export const QuizProvider = ({ children }) => {
 
   const getQuestion = async (playerId) => {
     try {
-      const response = await axios.get(`http://localhost:5000/api/quiz/questions/${playerId}`);
+      const response = await axios.get(`https://quizapp-imt6.onrender.com/api/quiz/questions/${playerId}`);
       setCurrentQuestion(response.data.data);
       setShowAnswer(false);
       setCurrentAnswer(response.data.data.answer);
@@ -80,7 +80,7 @@ export const QuizProvider = ({ children }) => {
   const sendCurrentQuestion = async (playerId) => {
     try {
       setLoading(true);
-      const response = await axios.post('http://localhost:5000/api/quiz/send-question', {
+      const response = await axios.post('https://quizapp-imt6.onrender.com/api/quiz/send-question', {
         playerId
       });
       return response.data;
@@ -96,7 +96,7 @@ export const QuizProvider = ({ children }) => {
   const sendAnswer = async () => {
     try {
       setLoading(true);
-      const response = await axios.post('http://localhost:5000/api/quiz/send-answer');
+      const response = await axios.post('https://quizapp-imt6.onrender.com/api/quiz/send-answer');
       return response.data;
     } catch (err) {
       setError(err.response?.data?.error || err.message);
@@ -110,7 +110,7 @@ export const QuizProvider = ({ children }) => {
   const resetQuiz = async () => {
     try {
       setLoading(true);
-      const response = await axios.post('http://localhost:5000/api/quiz/reset');
+      const response = await axios.post('https://quizapp-imt6.onrender.com/api/quiz/reset');
       setCurrentQuestion(null);
       setShowAnswer(false);
       setCurrentAnswer(null);
@@ -128,7 +128,7 @@ export const QuizProvider = ({ children }) => {
   const updateTeamScore = async (teamId, score) => {
     try {
       setLoading(true);
-      const response = await axios.post('http://localhost:5000/api/quiz/score', {
+      const response = await axios.post('https://quizapp-imt6.onrender.com/api/quiz/score', {
         teamId,
         score
       });
@@ -146,7 +146,7 @@ export const QuizProvider = ({ children }) => {
   const incrementTeamScore = async (teamId, points = 1) => {
     try {
       setLoading(true);
-      const response = await axios.post('http://localhost:5000/api/quiz/score/increment', {
+      const response = await axios.post('https://quizapp-imt6.onrender.com/api/quiz/score/increment', {
         teamId,
         points
       });
@@ -164,7 +164,7 @@ export const QuizProvider = ({ children }) => {
   const removeQuestion = async (playerId) => {
     try {
       setLoading(true);
-      const response = await axios.delete(`http://localhost:5000/api/quiz/questions/${playerId}`);
+      const response = await axios.delete(`https://quizapp-imt6.onrender.com/api/quiz/questions/${playerId}`);
       await fetchAllQuestions();
       await fetchUndisplayedQuestions();
       return response.data;
@@ -275,3 +275,4 @@ export const useQuiz = () => {
   }
   return context;
 };
+
